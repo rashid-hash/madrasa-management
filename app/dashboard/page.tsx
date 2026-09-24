@@ -15,7 +15,8 @@ import {
   FileSignature, 
   ArrowRight,
   Loader2,
-  CalendarDays
+  CalendarDays,
+  Megaphone
 } from "lucide-react";
 
 interface DashboardStats {
@@ -155,6 +156,11 @@ export default function DashboardOverview() {
             <Link href="/dashboard/classes/routine-settings" className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-purple-300 transition group">
               <div className="bg-purple-50 text-purple-600 p-2 rounded-lg group-hover:bg-purple-600 group-hover:text-white transition"><CalendarDays size={20} /></div>
               <div className="font-bold text-gray-700">রুটিন ম্যানেজ</div>
+            </Link>
+
+            <Link href="/dashboard/notices" className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-sky-300 transition group">
+              <div className="bg-sky-50 text-sky-600 p-2 rounded-lg group-hover:bg-sky-600 group-hover:text-white transition"><Megaphone size={20} /></div>
+              <div className="font-bold text-gray-700">নোটিশ প্রকাশ করুন</div>
             </Link>
           </div>
         </div>
