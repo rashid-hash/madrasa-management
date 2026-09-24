@@ -1,8 +1,8 @@
 // File: lib/firebase/config.ts
 import { initializeApp, getApps, getApp } from "firebase/app";
+import { getAuth } from "firebase/auth"; // auth ইম্পোর্ট করা হলো
 import { getFirestore } from "firebase/firestore";
-// import { getAuth } from "firebase/auth"; // লগইন সিস্টেমের জন্য (যদি লাগে)
-// import { getStorage } from "firebase/storage"; // ছবি আপলোডের জন্য (যদি লাগে)
+// import { getStorage } from "firebase/storage"; // ছবি আপলোডের জন্য লাগলে আনকমেন্ট করবেন
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -15,10 +15,10 @@ const firebaseConfig = {
 
 // Next.js-এ ফায়ারবেস যেন বারবার ইনিশিয়ালাইজ না হয়, তার জন্য এই চেকটি জরুরি
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+
+// Database এবং Authentication ইনিশিয়ালাইজ করা হলো
 const db = getFirestore(app);
+const auth = getAuth(app); 
 
-// const auth = getAuth(app);
-// const storage = getStorage(app);
-
-export { db }; 
-// export { db, auth, storage }; // যদি auth ও storage ব্যবহার করেন
+// দুটোই এক্সপোর্ট করা হলো যাতে অন্য ফাইলে ব্যবহার করা যায়
+export { db, auth };
