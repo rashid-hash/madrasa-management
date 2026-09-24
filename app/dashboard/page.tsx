@@ -16,7 +16,11 @@ import {
   ArrowRight,
   Loader2,
   CalendarDays,
-  Megaphone
+  Megaphone,
+  UserCheck,
+  Briefcase,
+  Library,
+  Home
 } from "lucide-react";
 
 interface DashboardStats {
@@ -162,6 +166,27 @@ export default function DashboardOverview() {
               <div className="bg-sky-50 text-sky-600 p-2 rounded-lg group-hover:bg-sky-600 group-hover:text-white transition"><Megaphone size={20} /></div>
               <div className="font-bold text-gray-700">নোটিশ প্রকাশ করুন</div>
             </Link>
+            
+            <Link href="/dashboard/attendance/students" className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-indigo-300 transition group">
+              <div className="bg-indigo-50 text-indigo-600 p-2 rounded-lg group-hover:bg-indigo-600 group-hover:text-white transition"><UserCheck size={20} /></div>
+              <div className="font-bold text-gray-700">শিক্ষার্থী হাজিরা</div>
+            </Link>
+
+            <Link href="/dashboard/attendance/staff" className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-teal-300 transition group">
+              <div className="bg-teal-50 text-teal-600 p-2 rounded-lg group-hover:bg-teal-600 group-hover:text-white transition"><Briefcase size={20} /></div>
+              <div className="font-bold text-gray-700">স্টাফ হাজিরা</div>
+            </Link>
+
+            <Link href="/dashboard/library" className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-teal-300 transition group">
+              <div className="bg-teal-50 text-teal-600 p-2 rounded-lg group-hover:bg-teal-600 group-hover:text-white transition"><Library size={20} /></div>
+              <div className="font-bold text-gray-700">লাইব্রেরি</div>
+            </Link>
+
+            <Link href="/dashboard/hostel" className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-rose-300 transition group">
+              <div className="bg-rose-50 text-rose-600 p-2 rounded-lg group-hover:bg-rose-600 group-hover:text-white transition"><Home size={20} /></div>
+              <div className="font-bold text-gray-700">হোস্টেল ও মেস</div>
+            </Link>
+
           </div>
         </div>
 
